@@ -23,8 +23,8 @@ function Store() {
 
 const HeroBunner = () => {
     return (
-        <section className="w-full h-[90vh] bg-cover bg-center relative ">
-            <div className="w-full h-[90vh] relative">
+        <section className="w-full  bg-cover bg-center relative ">
+            <div className="w-full sm:h-[90vh] h-[70vh] relative">
                 <img src={BunnerImage} alt="" className="object-cover w-full h-full" />
                 <div className="absolute z-10 top-0 w-full h-full flex flex-col justify-center items-center bg-opacity-40 text-white text-center px-4">
                     <h1 className="text-6xl md:text-6xl font-bold mb-4 font-[Cardo]">Welcome to Our Store</h1>
