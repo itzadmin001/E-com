@@ -27,7 +27,7 @@ function About() {
             </div>
 
             {/* Shoes & Bags Collection */}
-            <div className="grid md:grid-cols-2 gap-10 items-center mb-20">
+            <div className="grid md:grid-cols-2 gap-10 sm:items-center text-center mb-20">
                 <div className="order-2 md:order-1">
                     <h2 className="text-4xl font-bold mb-4 font-[Silkscreen]">Shoes & Bags Collection</h2>
                     <p className="text-gray-300 mb-6 font-[Raleway]">

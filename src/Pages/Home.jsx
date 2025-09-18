@@ -144,7 +144,7 @@ const ExploreNow = () => {
                     />
                 </div>
                 <div className="md:w-1/2 mt-6 md:mt-0 md:pl-10">
-                    <h1 className="text-4xl  mb-4 font-[Cardo] font-bold">
+                    <h1 className="sm:text-4xl text-2xl mb-4 font-[Cardo] font-bold">
                         Find Your Perfect Look at Jolt's Stylish New on Tokyo
                     </h1>
                     <p className="text-gray-600  mb-4 font-[Raleway]">
@@ -159,7 +159,7 @@ const ExploreNow = () => {
 
             {/* Featured Collections Section */}
             <div className="text-center mb-8 ">
-                <h2 className="text-5xl font-bold font-[Cardo]">Featured Collections</h2>
+                <h2 className="sm:text-5xl text-2xl font-bold font-[Cardo]">Featured Collections</h2>
                 <p className="text-gray-500 mt-2 font-[Raleway]">
                     Dare to mix and match! Check our collections to level up your fashion game.
                 </p>
