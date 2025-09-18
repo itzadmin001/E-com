@@ -81,20 +81,23 @@ function ProductCard({ product, title }) {
                     <h3 className="text-gray-900 font-medium text-lg truncate font-[Silkscreen]">{product.name}</h3>
                     <p className="text-gray-500 text-sm mt-1 truncate font-[Raleway]">{product.description}</p>
 
-                    <div className="flex items-center gap-3 mt-3 font-[Raleway]">
-                        <div className="flex items-center gap-1">
+                    <div className="flex sm:flex-row flex-col sm:items-center justify-center gap-2 mt-3 font-[Raleway]">
+                        <div className="flex sm:items-center justify-center  gap-1">
                             {stars.map((filled, idx) => (
-                                <svg key={idx} viewBox="0 0 24 24" width="16" height="16" className={`${filled ? "text-yellow-400" : "text-white stroke-gray-300"} stroke-1`}>
+                                <svg key={idx} viewBox="0 0 24 24" width="10" height="10" className={`${filled ? "text-yellow-400" : "text-white stroke-gray-300"} stroke-1`}>
                                     <path fill={filled ? "currentColor" : "none"} stroke={filled ? "none" : "#d1d5db"} d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.176L12 18.896l-7.336 3.864 1.402-8.176L.132 9.21l8.2-1.192z" />
                                 </svg>
                             ))}
                         </div>
 
-                        <span className="text-gray-900 font-semibold text-lg ml-auto ">${product.price}</span>
+                        <span className="text-gray-900 font-semibold text-lg sm:ml-auto text-center ">${product.price}</span>
 
-                        <button onClick={HandleCartInfo} className="cursor-pointer border-[1px] rounded-full p-2 shadow-sm hover:bg-gray-800 transition text-gray-700 hover:text-white">
-                            <SlHandbag />
-                        </button>
+                        <div className=" flex items-center justify-center cursor-pointer border-[1px] rounded-full p-2 shadow-sm hover:bg-gray-800 transition text-gray-700 hover:text-white">
+                            <button onClick={HandleCartInfo} >
+                                <SlHandbag />
+                            </button>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -125,7 +128,7 @@ function ProductCard({ product, title }) {
                     <p className="text-gray-500 text-base mb-2 font-[Raleway]">{product.description}</p>
                     <div className="flex items-center gap-2 mb-2 font-[Raleway]">
                         {stars.map((filled, idx) => (
-                            <svg key={idx} viewBox="0 0 24 24" width="18" height="18" className={`${filled ? "text-yellow-400" : "text-white stroke-gray-300"} stroke-1`}>
+                            <svg key={idx} viewBox="0 0 24 24" width="10" height="10" className={`${filled ? "text-yellow-400" : "text-white stroke-gray-300"} stroke-1`}>
                                 <path fill={filled ? "currentColor" : "none"} stroke={filled ? "none" : "#d1d5db"} d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.176L12 18.896l-7.336 3.864 1.402-8.176L.132 9.21l8.2-1.192z" />
                             </svg>
                         ))}

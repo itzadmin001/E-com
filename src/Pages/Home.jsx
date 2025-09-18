@@ -85,7 +85,7 @@ const NewCollection = ({ productImage, products }) => {
     const navigate = useNavigate()
 
     return (
-        <section className=" w-full px-10 min-h-[100vh] bg-white  ">
+        <section className=" w-full sm:px-10 px-6 min-h-[100vh] bg-white  ">
             <div className=" mx-auto pt-10">
                 <div className="flex flex-col md:flex-row items-center justify-between">
                     <div className="md:w-3/2 text-center md:text-left">
@@ -102,7 +102,7 @@ const NewCollection = ({ productImage, products }) => {
                 </div>
             </div>
 
-            <div className="mt-10  grid lg:grid-cols-4 md:grid-cols-3  sm:grid-cols-2 grid-cols-2 gap-10">
+            <div className="mt-10  grid lg:grid-cols-4 md:grid-cols-3  sm:grid-cols-2 grid-cols-2 sm:gap-10 gap-2">
                 {newArrivals.length === 0 ? (
                     <div className="col-span-full text-center py-8">No new arrivals at the moment.</div>
                 ) : (
@@ -132,7 +132,7 @@ const ExploreNow = () => {
         { name: "Bottoms", imgSrc: "https://plus.unsplash.com/premium_photo-1708110920881-635419c3411f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGZhc2hpb258ZW58MHx8MHx8fDA%3D" },
     ];
     return (
-        <section className="w-full  min-h-[100vh] mx-auto px-10 py-8 mb-5">
+        <section className="w-full  min-h-[100vh] mx-auto sm:px-10 px-6 py-8 mb-5">
             {/* Top Sale Section */}
             <div className="flex flex-col md:flex-row items-center bg-white  rounded-lg p-6 mb-12">
                 <div className="md:w-1/2">

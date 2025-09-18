@@ -76,7 +76,6 @@ function Header() {
                     </div>
                     <div onClick={() => setCartOpen(true)} className="ml-2 bg-black cursor-pointer md:block hidden relative rounded-sm text-gray-400 font-semibold py-2 px-3 hover:bg-gray-600 duration-300">
                         <button className="cursor-pointer"
-
                             aria-label="Cart"
                         >
                             <BsCart4 size={24} />
@@ -115,6 +114,87 @@ function Header() {
 
             {/* Mobile side drawer + overlay */}
             {/* overlay */}
+            {/* Backdrop */}
+            <div
+                className={`fixed inset-0 bg-black/40 z-40 transition-opacity duration-300 ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+                aria-hidden={!open}
+                onClick={() => setOpen(false)}
+            />
+
+            {/* Drawer (from left, ~70% width) */}
+            <aside
+                id="mobile-drawer"
+                className={`fixed left-0 top-0 h-full z-50 transform transition-transform duration-300 ${open ? "translate-x-0" : "-translate-x-full"}`}
+                style={{ width: "70%" }}
+                aria-hidden={!open}
+            >
+                <div className="h-full bg-white shadow-lg flex flex-col">
+                    {/* Drawer header */}
+                    <div className="flex items-center justify-between px-4 py-3 border-b">
+                        <div className="inline-flex items-center gap-2">
+                            <span className="text-lg font-bold">Zentro</span>
+                        </div>
+                        <button
+                            onClick={() => setOpen(false)}
+                            aria-label="Close menu"
+                            className="p-2 rounded-md hover:bg-gray-100"
+                        >
+                            <FaTimes />
+                        </button>
+                    </div>
+
+                    {/* Drawer content: menu */}
+                    <nav className="px-4 py-6 flex-1 overflow-auto" aria-label="Mobile primary">
+                        <ul className="flex flex-col gap-3 text-gray-700">
+                            {menu.map((item, idx) => (
+                                <li key={idx}>
+                                    <Link
+                                        to={item.link}
+                                        onClick={() => setOpen(false)}
+                                        className={
+                                            "block w-full text-left px-3 py-3 rounded-md transition-colors " +
+                                            (item.primary
+                                                ? "bg-gray-900 text-white font-semibold"
+                                                : "hover:bg-gray-100")
+                                        }
+                                    >
+                                        {item.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+
+                    {/* Drawer footer: user actions */}
+                    <div className="px-4 py-4 border-t">
+                        {!user ? (
+                            <button
+                                onClick={() => { setOpen(false); navigate("/login"); }}
+                                className="w-full py-2 rounded-md bg-black text-white font-semibold"
+                            >
+                                Login
+                            </button>
+                        ) : (
+                            <button
+                                onClick={() => { dispatch(logout()); setOpen(false); }}
+                                className="w-full py-2 rounded-md bg-red-600 text-white font-semibold"
+                            >
+                                Logout
+                            </button>
+                        )}
+
+                        {/* Optional: quick cart button inside drawer */}
+                        <button
+                            onClick={() => { setCartOpen(true); setOpen(false); }}
+                            className="w-full mt-3 py-2 rounded-md border flex items-center justify-center gap-2"
+                        >
+                            <BsCart4 />
+                            <span>Cart ({cart.length})</span>
+                        </button>
+                    </div>
+                </div>
+            </aside>
+
             <CartItems cartOpen={cartOpen} setCartOpen={setCartOpen} />
 
         </header >
