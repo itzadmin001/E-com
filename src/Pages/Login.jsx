@@ -41,7 +41,6 @@ function Login() {
         if (!savedUser) {
             return notify("No user found. Please sign up first!", "error");
         }
-        console.log(savedUser)
 
         if (
             savedUser.email === data.email &&

@@ -56,7 +56,7 @@ function ProductDetails() {
     }
 
     return (
-        <section className="max-w-7xl mx-auto px-4 py-10 h-[100vh] font-[Raleway]">
+        <section className="max-w-7xl mx-auto px-4 py-10 min-h-[100vh] font-[Raleway]">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-20">
                 {/* LEFT IMAGE SECTION */}
                 <div>
@@ -92,7 +92,7 @@ function ProductDetails() {
                 <div className="flex flex-col justify-between">
                     <div>
                         {/* Title */}
-                        <h1 className="text-3xl font-bold text-gray-900 font-[Silkscreen]">{product.name}</h1>
+                        <h1 className="text-3xl font-bold text-gray-900 ">{product.name}</h1>
 
                         {/* Price and Discount */}
                         <div className="flex items-center gap-3 mt-2">

@@ -23,6 +23,7 @@ function ProductCard({ product, title }) {
 
 
     const HandleCartInfo = () => {
+
         dispatch(addToCart({ pId: product.id, price: product.price, image: product.image, name: product.name, description: product.description }))
         notify("Add In Cart", "success")
         setCartOpen(true)
@@ -92,8 +93,11 @@ function ProductCard({ product, title }) {
 
                         <span className="text-gray-900 font-semibold text-lg sm:ml-auto text-center ">${product.price}</span>
 
-                        <div className=" flex items-center justify-center cursor-pointer border-[1px] rounded-full p-2 shadow-sm hover:bg-gray-800 transition text-gray-700 hover:text-white">
-                            <button onClick={HandleCartInfo} >
+                        <div onClick={(e) => {
+                            e.stopPropagation()
+                            HandleCartInfo()
+                        }} className=" flex items-center justify-center cursor-pointer border-[1px] rounded-full p-2 shadow-sm hover:bg-gray-800 transition text-gray-700 hover:text-white">
+                            <button >
                                 <SlHandbag />
                             </button>
                         </div>
@@ -135,9 +139,13 @@ function ProductCard({ product, title }) {
                         <span className="text-gray-600 text-sm ml-2">({product.rating})</span>
                     </div>
                 </div>
-                <div className="flex items-center justify-between mt-4">
+                <div onClick={(e) => {
+                    e.stopPropagation()
+                    HandleCartInfo()
+
+                }} className="flex items-center justify-between mt-4">
                     <span className="text-gray-900 font-bold text-2xl">${product.price}</span>
-                    <button onClick={HandleCartInfo} className="cursor-pointer border-[1px] rounded-full p-3 shadow-sm hover:bg-gray-800 transition text-gray-700 hover:text-white">
+                    <button className="cursor-pointer border-[1px] rounded-full p-3 shadow-sm hover:bg-gray-800 transition text-gray-700 hover:text-white">
                         <SlHandbag size={22} />
                     </button>
                 </div>
