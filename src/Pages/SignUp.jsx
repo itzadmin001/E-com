@@ -50,6 +50,7 @@ function Signup() {
         notify("Account created successfully 🎉", "success");
 
         dispatch(SignupUser(data))
+        navigate("/")
         e.target.reset()
 
     };
