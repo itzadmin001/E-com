@@ -120,9 +120,12 @@ function ProductCard({ product, title }) {
                 />
                 <button onClick={(e) => {
                     e.stopPropagation()
-                    dispatch(AddToWishlist({ pId: product.id, name: product.name, price: product.price, image: product.image, description: product.description, rating: product.rating }))
+                    handleWishlistToggle()
                 }} className="absolute cursor-pointer top-3 right-3 bg-white rounded-full p-2 shadow-sm hover:bg-gray-800 transition">
-                    <MdFavoriteBorder />
+                    {
+                        isInWishlist ? <FcLike /> :
+                            <MdFavoriteBorder />
+                    }
                 </button>
             </div>
             {/* Right: Details */}
