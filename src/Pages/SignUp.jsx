@@ -61,7 +61,7 @@ function Signup() {
     return (
         <div className="flex flex-col md:flex-row min-h-screen w-full overflow-hidden">
             {/* Left: Image */}
-            <div className="w-full md:w-1/2 slide-in-left">
+            <div className="md:h-auto h-62 md:w-1/2 slide-in-left">
                 <img
                     src="https://images.unsplash.com/photo-1732475530155-90158f3b5f79?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Signup Illustration"
@@ -72,7 +72,7 @@ function Signup() {
 
             {/* Right: Form */}
             <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8 slide-in-right">
-                <div className=" absolute top-5 right-10 cursor-pointer" onClick={() => navigate("/")}>
+                <div className=" md:absolute hidden  top-5 right-10 cursor-pointer" onClick={() => navigate("/")}>
                     <FaArrowCircleRight size={28} />
                 </div>
                 <h2 className="text-3xl font-bold mb-2">Create an Account</h2>
