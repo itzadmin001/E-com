@@ -59,9 +59,9 @@ function Signup() {
 
 
     return (
-        <div className="flex flex-col md:flex-row h-screen w-full overflow-hidden">
+        <div className="flex flex-col md:flex-row min-h-screen w-full overflow-hidden">
             {/* Left: Image */}
-            <div className="sm:w-full hidden md:w-1/2 slide-in-left">
+            <div className="w-full md:w-1/2 slide-in-left">
                 <img
                     src="https://images.unsplash.com/photo-1732475530155-90158f3b5f79?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt="Signup Illustration"
